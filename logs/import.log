@@ -1713,3 +1713,419 @@ RuntimeError: Tesseract OCR engine was not found. Install Tesseract and make sur
 2026-05-25 17:06:09,168 | INFO | Exported recipients.csv with 2353 rows
 2026-05-25 17:06:09,172 | INFO | Import complete | found=4228 | new=1808 | duplicates=2420 | invalid=3
 2026-05-25 17:06:20,551 | INFO | Exported recipients.csv with 2353 rows
+2026-05-25 17:36:30,870 | INFO | Import started | files=3 | names=WhatsApp Image 2026-05-25 at 2.35.35 PM (2).jpeg, WhatsApp Image 2026-05-25 at 2.35.35 PM (1).jpeg, WhatsApp Image 2026-05-25 at 2.35.35 PM.jpeg
+2026-05-25 17:36:31,019 | ERROR | Failed to process WhatsApp Image 2026-05-25 at 2.35.35 PM (2).jpeg
+Traceback (most recent call last):
+  File "C:\Users\Anju\anaconda3\Lib\site-packages\pytesseract\pytesseract.py", line 275, in run_tesseract
+    proc = subprocess.Popen(cmd_args, **subprocess_args())
+  File "C:\Users\Anju\anaconda3\Lib\subprocess.py", line 1039, in __init__
+    self._execute_child(args, executable, preexec_fn, close_fds,
+    ~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+                        pass_fds, cwd, env,
+                        ^^^^^^^^^^^^^^^^^^^
+    ...<5 lines>...
+                        gid, gids, uid, umask,
+                        ^^^^^^^^^^^^^^^^^^^^^^
+                        start_new_session, process_group)
+                        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Anju\anaconda3\Lib\subprocess.py", line 1554, in _execute_child
+    hp, ht, pid, tid = _winapi.CreateProcess(executable, args,
+                       ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^
+                             # no special security
+                             ^^^^^^^^^^^^^^^^^^^^^
+    ...<4 lines>...
+                             cwd,
+                             ^^^^
+                             startupinfo)
+                             ^^^^^^^^^^^^
+FileNotFoundError: [WinError 2] The system cannot find the file specified
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\Anju\OneDrive\Desktop\EMAILSAUTOMATION\lead-email-extractor\app.py", line 199, in read_image_text
+    return pytesseract.image_to_string(image)
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^
+  File "C:\Users\Anju\anaconda3\Lib\site-packages\pytesseract\pytesseract.py", line 486, in image_to_string
+    return {
+           ~
+    ...<2 lines>...
+        Output.STRING: lambda: run_and_get_output(*args),
+        ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    }[output_type]()
+    ~~~~~~~~~~~~~~^^
+  File "C:\Users\Anju\anaconda3\Lib\site-packages\pytesseract\pytesseract.py", line 489, in <lambda>
+    Output.STRING: lambda: run_and_get_output(*args),
+                           ~~~~~~~~~~~~~~~~~~^^^^^^^
+  File "C:\Users\Anju\anaconda3\Lib\site-packages\pytesseract\pytesseract.py", line 352, in run_and_get_output
+    run_tesseract(**kwargs)
+    ~~~~~~~~~~~~~^^^^^^^^^^
+  File "C:\Users\Anju\anaconda3\Lib\site-packages\pytesseract\pytesseract.py", line 280, in run_tesseract
+    raise TesseractNotFoundError()
+pytesseract.pytesseract.TesseractNotFoundError: tesseract is not installed or it's not in your PATH. See README file for more information.
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\Anju\OneDrive\Desktop\EMAILSAUTOMATION\lead-email-extractor\app.py", line 276, in process_uploaded_files
+    text = extract_text_from_file(file_name, file_bytes)
+  File "C:\Users\Anju\OneDrive\Desktop\EMAILSAUTOMATION\lead-email-extractor\app.py", line 220, in extract_text_from_file
+    return read_image_text(file_bytes)
+  File "C:\Users\Anju\OneDrive\Desktop\EMAILSAUTOMATION\lead-email-extractor\app.py", line 201, in read_image_text
+    raise RuntimeError(
+    ...<2 lines>...
+    ) from error
+RuntimeError: Tesseract OCR engine was not found. Install Tesseract OCR, then restart this app. CSV, Excel, TXT, and PDF files still work without Tesseract.
+2026-05-25 17:36:31,118 | ERROR | Failed to process WhatsApp Image 2026-05-25 at 2.35.35 PM (1).jpeg
+Traceback (most recent call last):
+  File "C:\Users\Anju\anaconda3\Lib\site-packages\pytesseract\pytesseract.py", line 275, in run_tesseract
+    proc = subprocess.Popen(cmd_args, **subprocess_args())
+  File "C:\Users\Anju\anaconda3\Lib\subprocess.py", line 1039, in __init__
+    self._execute_child(args, executable, preexec_fn, close_fds,
+    ~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+                        pass_fds, cwd, env,
+                        ^^^^^^^^^^^^^^^^^^^
+    ...<5 lines>...
+                        gid, gids, uid, umask,
+                        ^^^^^^^^^^^^^^^^^^^^^^
+                        start_new_session, process_group)
+                        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Anju\anaconda3\Lib\subprocess.py", line 1554, in _execute_child
+    hp, ht, pid, tid = _winapi.CreateProcess(executable, args,
+                       ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^
+                             # no special security
+                             ^^^^^^^^^^^^^^^^^^^^^
+    ...<4 lines>...
+                             cwd,
+                             ^^^^
+                             startupinfo)
+                             ^^^^^^^^^^^^
+FileNotFoundError: [WinError 2] The system cannot find the file specified
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\Anju\OneDrive\Desktop\EMAILSAUTOMATION\lead-email-extractor\app.py", line 199, in read_image_text
+    return pytesseract.image_to_string(image)
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^
+  File "C:\Users\Anju\anaconda3\Lib\site-packages\pytesseract\pytesseract.py", line 486, in image_to_string
+    return {
+           ~
+    ...<2 lines>...
+        Output.STRING: lambda: run_and_get_output(*args),
+        ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    }[output_type]()
+    ~~~~~~~~~~~~~~^^
+  File "C:\Users\Anju\anaconda3\Lib\site-packages\pytesseract\pytesseract.py", line 489, in <lambda>
+    Output.STRING: lambda: run_and_get_output(*args),
+                           ~~~~~~~~~~~~~~~~~~^^^^^^^
+  File "C:\Users\Anju\anaconda3\Lib\site-packages\pytesseract\pytesseract.py", line 352, in run_and_get_output
+    run_tesseract(**kwargs)
+    ~~~~~~~~~~~~~^^^^^^^^^^
+  File "C:\Users\Anju\anaconda3\Lib\site-packages\pytesseract\pytesseract.py", line 280, in run_tesseract
+    raise TesseractNotFoundError()
+pytesseract.pytesseract.TesseractNotFoundError: tesseract is not installed or it's not in your PATH. See README file for more information.
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\Anju\OneDrive\Desktop\EMAILSAUTOMATION\lead-email-extractor\app.py", line 276, in process_uploaded_files
+    text = extract_text_from_file(file_name, file_bytes)
+  File "C:\Users\Anju\OneDrive\Desktop\EMAILSAUTOMATION\lead-email-extractor\app.py", line 220, in extract_text_from_file
+    return read_image_text(file_bytes)
+  File "C:\Users\Anju\OneDrive\Desktop\EMAILSAUTOMATION\lead-email-extractor\app.py", line 201, in read_image_text
+    raise RuntimeError(
+    ...<2 lines>...
+    ) from error
+RuntimeError: Tesseract OCR engine was not found. Install Tesseract OCR, then restart this app. CSV, Excel, TXT, and PDF files still work without Tesseract.
+2026-05-25 17:36:31,232 | ERROR | Failed to process WhatsApp Image 2026-05-25 at 2.35.35 PM.jpeg
+Traceback (most recent call last):
+  File "C:\Users\Anju\anaconda3\Lib\site-packages\pytesseract\pytesseract.py", line 275, in run_tesseract
+    proc = subprocess.Popen(cmd_args, **subprocess_args())
+  File "C:\Users\Anju\anaconda3\Lib\subprocess.py", line 1039, in __init__
+    self._execute_child(args, executable, preexec_fn, close_fds,
+    ~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+                        pass_fds, cwd, env,
+                        ^^^^^^^^^^^^^^^^^^^
+    ...<5 lines>...
+                        gid, gids, uid, umask,
+                        ^^^^^^^^^^^^^^^^^^^^^^
+                        start_new_session, process_group)
+                        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Anju\anaconda3\Lib\subprocess.py", line 1554, in _execute_child
+    hp, ht, pid, tid = _winapi.CreateProcess(executable, args,
+                       ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^
+                             # no special security
+                             ^^^^^^^^^^^^^^^^^^^^^
+    ...<4 lines>...
+                             cwd,
+                             ^^^^
+                             startupinfo)
+                             ^^^^^^^^^^^^
+FileNotFoundError: [WinError 2] The system cannot find the file specified
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\Anju\OneDrive\Desktop\EMAILSAUTOMATION\lead-email-extractor\app.py", line 199, in read_image_text
+    return pytesseract.image_to_string(image)
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^
+  File "C:\Users\Anju\anaconda3\Lib\site-packages\pytesseract\pytesseract.py", line 486, in image_to_string
+    return {
+           ~
+    ...<2 lines>...
+        Output.STRING: lambda: run_and_get_output(*args),
+        ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    }[output_type]()
+    ~~~~~~~~~~~~~~^^
+  File "C:\Users\Anju\anaconda3\Lib\site-packages\pytesseract\pytesseract.py", line 489, in <lambda>
+    Output.STRING: lambda: run_and_get_output(*args),
+                           ~~~~~~~~~~~~~~~~~~^^^^^^^
+  File "C:\Users\Anju\anaconda3\Lib\site-packages\pytesseract\pytesseract.py", line 352, in run_and_get_output
+    run_tesseract(**kwargs)
+    ~~~~~~~~~~~~~^^^^^^^^^^
+  File "C:\Users\Anju\anaconda3\Lib\site-packages\pytesseract\pytesseract.py", line 280, in run_tesseract
+    raise TesseractNotFoundError()
+pytesseract.pytesseract.TesseractNotFoundError: tesseract is not installed or it's not in your PATH. See README file for more information.
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\Anju\OneDrive\Desktop\EMAILSAUTOMATION\lead-email-extractor\app.py", line 276, in process_uploaded_files
+    text = extract_text_from_file(file_name, file_bytes)
+  File "C:\Users\Anju\OneDrive\Desktop\EMAILSAUTOMATION\lead-email-extractor\app.py", line 220, in extract_text_from_file
+    return read_image_text(file_bytes)
+  File "C:\Users\Anju\OneDrive\Desktop\EMAILSAUTOMATION\lead-email-extractor\app.py", line 201, in read_image_text
+    raise RuntimeError(
+    ...<2 lines>...
+    ) from error
+RuntimeError: Tesseract OCR engine was not found. Install Tesseract OCR, then restart this app. CSV, Excel, TXT, and PDF files still work without Tesseract.
+2026-05-25 17:36:31,283 | INFO | Exported recipients.csv with 2353 rows
+2026-05-25 17:36:31,288 | INFO | Import complete | found=0 | new=0 | duplicates=0 | invalid=0
+2026-05-25 17:37:03,357 | INFO | Import started | files=3 | names=WhatsApp Image 2026-05-25 at 2.35.35 PM (2).jpeg, WhatsApp Image 2026-05-25 at 2.35.35 PM (1).jpeg, WhatsApp Image 2026-05-25 at 2.35.35 PM.jpeg
+2026-05-25 17:37:03,406 | ERROR | Failed to process WhatsApp Image 2026-05-25 at 2.35.35 PM (2).jpeg
+Traceback (most recent call last):
+  File "C:\Users\Anju\anaconda3\Lib\site-packages\pytesseract\pytesseract.py", line 275, in run_tesseract
+    proc = subprocess.Popen(cmd_args, **subprocess_args())
+  File "C:\Users\Anju\anaconda3\Lib\subprocess.py", line 1039, in __init__
+    self._execute_child(args, executable, preexec_fn, close_fds,
+    ~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+                        pass_fds, cwd, env,
+                        ^^^^^^^^^^^^^^^^^^^
+    ...<5 lines>...
+                        gid, gids, uid, umask,
+                        ^^^^^^^^^^^^^^^^^^^^^^
+                        start_new_session, process_group)
+                        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Anju\anaconda3\Lib\subprocess.py", line 1554, in _execute_child
+    hp, ht, pid, tid = _winapi.CreateProcess(executable, args,
+                       ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^
+                             # no special security
+                             ^^^^^^^^^^^^^^^^^^^^^
+    ...<4 lines>...
+                             cwd,
+                             ^^^^
+                             startupinfo)
+                             ^^^^^^^^^^^^
+FileNotFoundError: [WinError 2] The system cannot find the file specified
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\Anju\OneDrive\Desktop\EMAILSAUTOMATION\lead-email-extractor\app.py", line 199, in read_image_text
+    return pytesseract.image_to_string(image)
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^
+  File "C:\Users\Anju\anaconda3\Lib\site-packages\pytesseract\pytesseract.py", line 486, in image_to_string
+    return {
+           ~
+    ...<2 lines>...
+        Output.STRING: lambda: run_and_get_output(*args),
+        ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    }[output_type]()
+    ~~~~~~~~~~~~~~^^
+  File "C:\Users\Anju\anaconda3\Lib\site-packages\pytesseract\pytesseract.py", line 489, in <lambda>
+    Output.STRING: lambda: run_and_get_output(*args),
+                           ~~~~~~~~~~~~~~~~~~^^^^^^^
+  File "C:\Users\Anju\anaconda3\Lib\site-packages\pytesseract\pytesseract.py", line 352, in run_and_get_output
+    run_tesseract(**kwargs)
+    ~~~~~~~~~~~~~^^^^^^^^^^
+  File "C:\Users\Anju\anaconda3\Lib\site-packages\pytesseract\pytesseract.py", line 280, in run_tesseract
+    raise TesseractNotFoundError()
+pytesseract.pytesseract.TesseractNotFoundError: tesseract is not installed or it's not in your PATH. See README file for more information.
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\Anju\OneDrive\Desktop\EMAILSAUTOMATION\lead-email-extractor\app.py", line 276, in process_uploaded_files
+    text = extract_text_from_file(file_name, file_bytes)
+  File "C:\Users\Anju\OneDrive\Desktop\EMAILSAUTOMATION\lead-email-extractor\app.py", line 220, in extract_text_from_file
+    return read_image_text(file_bytes)
+  File "C:\Users\Anju\OneDrive\Desktop\EMAILSAUTOMATION\lead-email-extractor\app.py", line 201, in read_image_text
+    raise RuntimeError(
+    ...<2 lines>...
+    ) from error
+RuntimeError: Tesseract OCR engine was not found. Install Tesseract OCR, then restart this app. CSV, Excel, TXT, and PDF files still work without Tesseract.
+2026-05-25 17:37:03,452 | ERROR | Failed to process WhatsApp Image 2026-05-25 at 2.35.35 PM (1).jpeg
+Traceback (most recent call last):
+  File "C:\Users\Anju\anaconda3\Lib\site-packages\pytesseract\pytesseract.py", line 275, in run_tesseract
+    proc = subprocess.Popen(cmd_args, **subprocess_args())
+  File "C:\Users\Anju\anaconda3\Lib\subprocess.py", line 1039, in __init__
+    self._execute_child(args, executable, preexec_fn, close_fds,
+    ~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+                        pass_fds, cwd, env,
+                        ^^^^^^^^^^^^^^^^^^^
+    ...<5 lines>...
+                        gid, gids, uid, umask,
+                        ^^^^^^^^^^^^^^^^^^^^^^
+                        start_new_session, process_group)
+                        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Anju\anaconda3\Lib\subprocess.py", line 1554, in _execute_child
+    hp, ht, pid, tid = _winapi.CreateProcess(executable, args,
+                       ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^
+                             # no special security
+                             ^^^^^^^^^^^^^^^^^^^^^
+    ...<4 lines>...
+                             cwd,
+                             ^^^^
+                             startupinfo)
+                             ^^^^^^^^^^^^
+FileNotFoundError: [WinError 2] The system cannot find the file specified
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\Anju\OneDrive\Desktop\EMAILSAUTOMATION\lead-email-extractor\app.py", line 199, in read_image_text
+    return pytesseract.image_to_string(image)
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^
+  File "C:\Users\Anju\anaconda3\Lib\site-packages\pytesseract\pytesseract.py", line 486, in image_to_string
+    return {
+           ~
+    ...<2 lines>...
+        Output.STRING: lambda: run_and_get_output(*args),
+        ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    }[output_type]()
+    ~~~~~~~~~~~~~~^^
+  File "C:\Users\Anju\anaconda3\Lib\site-packages\pytesseract\pytesseract.py", line 489, in <lambda>
+    Output.STRING: lambda: run_and_get_output(*args),
+                           ~~~~~~~~~~~~~~~~~~^^^^^^^
+  File "C:\Users\Anju\anaconda3\Lib\site-packages\pytesseract\pytesseract.py", line 352, in run_and_get_output
+    run_tesseract(**kwargs)
+    ~~~~~~~~~~~~~^^^^^^^^^^
+  File "C:\Users\Anju\anaconda3\Lib\site-packages\pytesseract\pytesseract.py", line 280, in run_tesseract
+    raise TesseractNotFoundError()
+pytesseract.pytesseract.TesseractNotFoundError: tesseract is not installed or it's not in your PATH. See README file for more information.
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\Anju\OneDrive\Desktop\EMAILSAUTOMATION\lead-email-extractor\app.py", line 276, in process_uploaded_files
+    text = extract_text_from_file(file_name, file_bytes)
+  File "C:\Users\Anju\OneDrive\Desktop\EMAILSAUTOMATION\lead-email-extractor\app.py", line 220, in extract_text_from_file
+    return read_image_text(file_bytes)
+  File "C:\Users\Anju\OneDrive\Desktop\EMAILSAUTOMATION\lead-email-extractor\app.py", line 201, in read_image_text
+    raise RuntimeError(
+    ...<2 lines>...
+    ) from error
+RuntimeError: Tesseract OCR engine was not found. Install Tesseract OCR, then restart this app. CSV, Excel, TXT, and PDF files still work without Tesseract.
+2026-05-25 17:37:03,497 | ERROR | Failed to process WhatsApp Image 2026-05-25 at 2.35.35 PM.jpeg
+Traceback (most recent call last):
+  File "C:\Users\Anju\anaconda3\Lib\site-packages\pytesseract\pytesseract.py", line 275, in run_tesseract
+    proc = subprocess.Popen(cmd_args, **subprocess_args())
+  File "C:\Users\Anju\anaconda3\Lib\subprocess.py", line 1039, in __init__
+    self._execute_child(args, executable, preexec_fn, close_fds,
+    ~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+                        pass_fds, cwd, env,
+                        ^^^^^^^^^^^^^^^^^^^
+    ...<5 lines>...
+                        gid, gids, uid, umask,
+                        ^^^^^^^^^^^^^^^^^^^^^^
+                        start_new_session, process_group)
+                        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Anju\anaconda3\Lib\subprocess.py", line 1554, in _execute_child
+    hp, ht, pid, tid = _winapi.CreateProcess(executable, args,
+                       ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^
+                             # no special security
+                             ^^^^^^^^^^^^^^^^^^^^^
+    ...<4 lines>...
+                             cwd,
+                             ^^^^
+                             startupinfo)
+                             ^^^^^^^^^^^^
+FileNotFoundError: [WinError 2] The system cannot find the file specified
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\Anju\OneDrive\Desktop\EMAILSAUTOMATION\lead-email-extractor\app.py", line 199, in read_image_text
+    return pytesseract.image_to_string(image)
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^
+  File "C:\Users\Anju\anaconda3\Lib\site-packages\pytesseract\pytesseract.py", line 486, in image_to_string
+    return {
+           ~
+    ...<2 lines>...
+        Output.STRING: lambda: run_and_get_output(*args),
+        ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    }[output_type]()
+    ~~~~~~~~~~~~~~^^
+  File "C:\Users\Anju\anaconda3\Lib\site-packages\pytesseract\pytesseract.py", line 489, in <lambda>
+    Output.STRING: lambda: run_and_get_output(*args),
+                           ~~~~~~~~~~~~~~~~~~^^^^^^^
+  File "C:\Users\Anju\anaconda3\Lib\site-packages\pytesseract\pytesseract.py", line 352, in run_and_get_output
+    run_tesseract(**kwargs)
+    ~~~~~~~~~~~~~^^^^^^^^^^
+  File "C:\Users\Anju\anaconda3\Lib\site-packages\pytesseract\pytesseract.py", line 280, in run_tesseract
+    raise TesseractNotFoundError()
+pytesseract.pytesseract.TesseractNotFoundError: tesseract is not installed or it's not in your PATH. See README file for more information.
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\Anju\OneDrive\Desktop\EMAILSAUTOMATION\lead-email-extractor\app.py", line 276, in process_uploaded_files
+    text = extract_text_from_file(file_name, file_bytes)
+  File "C:\Users\Anju\OneDrive\Desktop\EMAILSAUTOMATION\lead-email-extractor\app.py", line 220, in extract_text_from_file
+    return read_image_text(file_bytes)
+  File "C:\Users\Anju\OneDrive\Desktop\EMAILSAUTOMATION\lead-email-extractor\app.py", line 201, in read_image_text
+    raise RuntimeError(
+    ...<2 lines>...
+    ) from error
+RuntimeError: Tesseract OCR engine was not found. Install Tesseract OCR, then restart this app. CSV, Excel, TXT, and PDF files still work without Tesseract.
+2026-05-25 17:37:03,509 | INFO | Exported recipients.csv with 2353 rows
+2026-05-25 17:37:03,510 | INFO | Import complete | found=0 | new=0 | duplicates=0 | invalid=0
+2026-05-25 17:43:32,331 | INFO | Import started | files=3 | names=WhatsApp Image 2026-05-25 at 2.35.35 PM (2).jpeg, WhatsApp Image 2026-05-25 at 2.35.35 PM (1).jpeg, WhatsApp Image 2026-05-25 at 2.35.35 PM.jpeg
+2026-05-25 17:43:32,852 | INFO | Processed WhatsApp Image 2026-05-25 at 2.35.35 PM (2).jpeg | extracted=12 | unique=12 | invalid=0
+2026-05-25 17:43:33,405 | INFO | Processed WhatsApp Image 2026-05-25 at 2.35.35 PM (1).jpeg | extracted=9 | unique=9 | invalid=1
+2026-05-25 17:43:34,066 | INFO | Processed WhatsApp Image 2026-05-25 at 2.35.35 PM.jpeg | extracted=22 | unique=22 | invalid=0
+2026-05-25 17:43:34,093 | INFO | Exported recipients.csv with 2395 rows
+2026-05-25 17:43:34,096 | INFO | Import complete | found=43 | new=42 | duplicates=1 | invalid=1
+2026-05-25 18:07:19,386 | INFO | Exported domain7_test.csv with 2 rows
+2026-05-25 18:07:19,390 | INFO | Exported domain7_test.csv with 3 rows
+2026-05-25 18:12:23,410 | INFO | Import started | target=C:\Users\Anju\OneDrive\Desktop\EMAILSAUTOMATION\lead-email-extractor\recipient_lists\ai-eng-bootcamp2.csv | files=8 | names=Infosys 5th slot list.xlsx, Infosys 6th slot list.xlsx, Infosys SE hiring eligible.xlsx, CSD (2).xlsx, DOC-20260114-WA0058..xlsx, WhatsApp Image 2026-05-25 at 2.35.35 PM (2).jpeg, WhatsApp Image 2026-05-25 at 2.35.35 PM (1).jpeg, WhatsApp Image 2026-05-25 at 2.35.35 PM.jpeg
+2026-05-25 18:12:24,199 | INFO | Processed Infosys 5th slot list.xlsx | extracted=1100 | unique=1100 | invalid=0
+2026-05-25 18:12:24,295 | INFO | Processed Infosys 6th slot list.xlsx | extracted=437 | unique=437 | invalid=0
+2026-05-25 18:12:24,620 | INFO | Processed Infosys SE hiring eligible.xlsx | extracted=1707 | unique=1707 | invalid=0
+2026-05-25 18:12:24,686 | INFO | Processed CSD (2).xlsx | extracted=545 | unique=545 | invalid=0
+2026-05-25 18:12:24,781 | INFO | Processed DOC-20260114-WA0058..xlsx | extracted=439 | unique=439 | invalid=3
+2026-05-25 18:12:25,326 | INFO | Processed WhatsApp Image 2026-05-25 at 2.35.35 PM (2).jpeg | extracted=12 | unique=12 | invalid=0
+2026-05-25 18:12:25,845 | INFO | Processed WhatsApp Image 2026-05-25 at 2.35.35 PM (1).jpeg | extracted=9 | unique=9 | invalid=1
+2026-05-25 18:12:26,469 | INFO | Processed WhatsApp Image 2026-05-25 at 2.35.35 PM.jpeg | extracted=22 | unique=22 | invalid=0
+2026-05-25 18:12:26,502 | INFO | Exported ai-eng-bootcamp2.csv with 2395 rows
+2026-05-25 18:12:26,505 | INFO | Import complete | target=C:\Users\Anju\OneDrive\Desktop\EMAILSAUTOMATION\lead-email-extractor\recipient_lists\ai-eng-bootcamp2.csv | found=4271 | new=2395 | duplicates=1876 | invalid=4
+2026-05-25 18:13:04,644 | INFO | Import started | target=C:\Users\Anju\OneDrive\Desktop\EMAILSAUTOMATION\lead-email-extractor\recipient_lists\demo-images.csv | files=3 | names=WhatsApp Image 2026-05-25 at 2.35.35 PM (2).jpeg, WhatsApp Image 2026-05-25 at 2.35.35 PM (1).jpeg, WhatsApp Image 2026-05-25 at 2.35.35 PM.jpeg
+2026-05-25 18:13:05,091 | INFO | Processed WhatsApp Image 2026-05-25 at 2.35.35 PM (2).jpeg | extracted=12 | unique=12 | invalid=0
+2026-05-25 18:13:05,577 | INFO | Processed WhatsApp Image 2026-05-25 at 2.35.35 PM (1).jpeg | extracted=9 | unique=9 | invalid=1
+2026-05-25 18:13:06,156 | INFO | Processed WhatsApp Image 2026-05-25 at 2.35.35 PM.jpeg | extracted=22 | unique=22 | invalid=0
+2026-05-25 18:13:06,160 | INFO | Exported demo-images.csv with 42 rows
+2026-05-25 18:13:06,162 | INFO | Import complete | target=C:\Users\Anju\OneDrive\Desktop\EMAILSAUTOMATION\lead-email-extractor\recipient_lists\demo-images.csv | found=43 | new=42 | duplicates=1 | invalid=1
+2026-05-25 18:43:14,763 | INFO | Deleted recipient list C:\Users\Anju\OneDrive\Desktop\EMAILSAUTOMATION\lead-email-extractor\recipient_lists\ai-eng-bootcamp2.csv
+2026-05-25 18:43:15,840 | INFO | Deleted recipient list C:\Users\Anju\OneDrive\Desktop\EMAILSAUTOMATION\lead-email-extractor\recipient_lists\demo-images.csv
+2026-05-25 18:43:48,489 | INFO | Import started | target=C:\Users\Anju\OneDrive\Desktop\EMAILSAUTOMATION\lead-email-extractor\recipient_lists\rohan-mails.csv | files=8 | names=Infosys 5th slot list.xlsx, Infosys 6th slot list.xlsx, Infosys SE hiring eligible.xlsx, CSD (2).xlsx, DOC-20260114-WA0058..xlsx, WhatsApp Image 2026-05-25 at 2.35.35 PM (2).jpeg, WhatsApp Image 2026-05-25 at 2.35.35 PM (1).jpeg, WhatsApp Image 2026-05-25 at 2.35.35 PM.jpeg
+2026-05-25 18:43:48,980 | INFO | Processed Infosys 5th slot list.xlsx | extracted=1100 | unique=1100 | invalid=0
+2026-05-25 18:43:49,067 | INFO | Processed Infosys 6th slot list.xlsx | extracted=437 | unique=437 | invalid=0
+2026-05-25 18:43:49,325 | INFO | Processed Infosys SE hiring eligible.xlsx | extracted=1707 | unique=1707 | invalid=0
+2026-05-25 18:43:49,379 | INFO | Processed CSD (2).xlsx | extracted=545 | unique=545 | invalid=0
+2026-05-25 18:43:49,456 | INFO | Processed DOC-20260114-WA0058..xlsx | extracted=441 | unique=441 | invalid=3
+2026-05-25 18:43:50,385 | INFO | Processed WhatsApp Image 2026-05-25 at 2.35.35 PM (2).jpeg | extracted=25 | unique=13 | invalid=1
+2026-05-25 18:43:51,586 | INFO | Processed WhatsApp Image 2026-05-25 at 2.35.35 PM (1).jpeg | extracted=49 | unique=24 | invalid=3
+2026-05-25 18:43:53,095 | INFO | Processed WhatsApp Image 2026-05-25 at 2.35.35 PM.jpeg | extracted=69 | unique=23 | invalid=0
+2026-05-25 18:43:53,160 | INFO | Exported rohan-mails.csv with 2410 rows
+2026-05-25 18:43:53,163 | INFO | Import complete | target=C:\Users\Anju\OneDrive\Desktop\EMAILSAUTOMATION\lead-email-extractor\recipient_lists\rohan-mails.csv | found=4373 | new=2410 | duplicates=1963 | invalid=7
